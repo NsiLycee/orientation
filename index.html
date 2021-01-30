@@ -116,14 +116,39 @@
 		</table>
 		</details>
 		<details><summary>Les thématiques abordées</summary>
-		<table><caption>Participants</caption>
+		<table id="thematiques"><caption>Participants</caption>
+			<script>
+			/*   Construction du tableau de présentation des thèmes
+			const 	TERMINALE = 0,
+				PREMIERE  = 1,
+				SECONDE   = 2;
+			let 	participants = [ ['Jarod,'Robin','Eric','Benjamin','Léali','Alexandre']	,
+					         ['Juliette,'Simon','Lilo','Charlotte','Gaël','Tom']		,
+					         ['Carla,'Sarah','Juliette','Adriain','Adam','Alexia'] ]	,
+				i, j, N = participants[TERMINALE].length, M = participants.length		, 
+				contenuTableau = "<caption>Participants</caption><tr><th>groupe</th><th>"+
+						"Avatars</th><th>théme de travail</th></tr>"			,
+				pathAvatar = "./ressources/images/avatars/";
+				
+			for (i=0; i < N; i++) {
+				contenuTableau += "<tr>";
+				contenuTableau += "<td>"+participants[TERMINALE][i]+" "+participants[PREMIERE][i]+
+				" "+participants[SECONDE][i]</td>";
+				for (j=0; j < M; j++) {
+					contenuTableau +='<td><img class="avatar" src="'+pathAvatar+'clara.png"'+ 
+					 'alt="Avatar provisoire de Jarod" title="Jarod en terminale" />
+				contenuTableau += "</tr>";
+			}
+			*/
+			
+			</script>
 			<tr><th>groupe</th><th>Avatars</th><th>théme de travail</th></tr>
 			<tr>
 				<td>Jarod Juliette Carla</td>
 				<td>
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Jarod" />
+					 alt="Avatar provisoire de Jarod" title="Jarod en terminale" />
 				
 					<img class="avatar" 
 					 src="./ressources/images/avatars/claro01.png" 
@@ -140,7 +165,7 @@
 				<td>
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Robin" />
+					 alt="Avatar provisoire de Robin"  title="Robin en terminale"/>
 				
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara.png" 
@@ -153,18 +178,18 @@
 				<td></td>
 			</tr>
 			<tr>
-				<td>&Eacute;ric Lilo Juliette</td>
+				<td>Éric Lilo Juliette</td>
 				<td>
 					<img class="avatar" 
 					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de &Eacute;ric" />
+					 alt="Avatar provisoire de &Eacute;ric" title="Éric en terminale"/>
 				
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara02.png" 
 					 alt="Avatar provisoire de Lilo" />
 					
 					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01)2.png" 
+					 src="./ressources/images/avatars/claro01.png" 
 					 alt="Avatar provisoire de Juliette" />
 				</td>
 				<td></td>
@@ -174,11 +199,11 @@
 				<td>
 					<img class="avatar" 
 					 src="./ressources/images/avatars/benji01.png" 
-					 alt="Avatar provisoire de Benjamin" />
+					 alt="Avatar provisoire de Benjamin" title="Benjamin en terminale" />
 					
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Charlotte" />
+					 alt="Avatar provisoire de Charlotte" title="Charlotte en première" />
 					
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara02.png" 
@@ -191,11 +216,11 @@
 				<td>
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Léali" />
+					 alt="Avatar provisoire de Léali" title="Léali en terminale" />
 				
 					<img class="avatar" 
 					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de Gaël" />
+					 alt="Avatar provisoire de Gaël" title="Gaël en première" />
 					
 					<img class="avatar" 
 					 src="./ressources/images/avatars/claro02.png" 
@@ -208,11 +233,11 @@
 				<td>
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Alexandre" />
+					 alt="Avatar provisoire de Alexandre" title="Alexandre en terminale"/>
 				
 					<img class="avatar" 
 					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Tom" />
+					 alt="Avatar provisoire de Tom" title="Tom en première" />
 					
 					<img class="avatar" 
 					 src="./ressources/images/avatars/claro01.png" 
