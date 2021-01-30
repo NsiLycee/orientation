@@ -29,7 +29,7 @@ function construireListeSommaire () {
 				  " target='_blank'>Accueil du site</a></li>";
 	
 	for (var i=0; i < nItems-1; i++) {
-		listeSommaire.innerHTML += "<li><a href='"+baseURL+"_"+i+ ".html' target='_blank' >" +tabItems[i]+"</a></li>";
+		listeSommaire.innerHTML += "<li><a href='"+baseURL+"niveau_"+i+ ".html' target='_blank' >" +tabItems[i]+"</a></li>";
 		}
 		
 	listeSommaire.innerHTML += "<li><a href='"+baseURL+"exemples/unicode.html' target='_blank' >" +tabItems[nItems-1]+"</a></li>";
