@@ -6,7 +6,7 @@
 
 selecteur { 	paramètre			: valeur			; /* commentaire                        */
 body {
-		background 			: rgb(200,250,255)		;
+		background 			: rgb(200,250,255) 		; /* bleu ciel				*/
 		color 				: black				;
 		padding 			: 20px				;
 		margin				: 0px				; /* pas de marge externe */
@@ -19,7 +19,7 @@ p {
 }
 
 tbody {
-		width 				: 800px				; 
+		width 				: 100%				; 
 }
 
 #titrePrincipal {
@@ -75,8 +75,11 @@ table {
 	height 				: 20px				;
 	font-size 			: 100 %				;
 }
-img {
+img.avatar {
 	border-radius			: 50%				; /* cadre rond 				*/
+	width				: 28%				; /* il y a trois avatars à placer dans un td   */
+	margin				: 3%				; /* 3 28 3 3 28 3 3 28 3 = 100 % 		*/
+	border				: 0px				;
 }
 svg{}
 div{
