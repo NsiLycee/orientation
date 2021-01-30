@@ -1,102 +1,124 @@
+/*****************************************************************************************************************
+**                                                                                                              **
+**                				Feuille de style générale					**
+**														**
+******************************************************************************************************************
+
+selecteur { 	paramètre			: valeur			; /* commentaire                        */
 body {
-	background : rgb(200,250,255);
-	color : black;
-	padding : 20 px;
+		background 			: rgb(200,250,255)		;
+		color 				: black				;
+		padding 			: 20px				;
+		margin				: 0px				; /* pas de marge externe */
 }
-
+/* liens hyperttexte 													*/
 a { 
-
 }
+/* paragraphes 														*/
 p {
-
 }
 
 tbody {
-	width : 800px; 
+		width 				: 800px				; 
 }
 
 #titrePrincipal {
-	color : cyan;
-	border : solid 2px yellow;
-	background-color: red;
-  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
-  animation-name: example;
-  animation-duration: 4s;
+		color 				: cyan				;
+		border 				: solid 2px yellow		;
+		background-color		: red				;
+	
+  		-webkit-animation-name		: example			; /* Safari 4.0 - 8.0 */
+  		-webkit-animation-duration	: 4s				; /* Safari 4.0 - 8.0 */
+  		animation-name			: example;
+  		animation-duration		: 4s;
 }
 /* pour Safari 4.0 - 8.0 */
 @-webkit-keyframes example {
-  from {background-color: red;}
-  to {background-color: pink;}
+  		from {background-color		: red;}
+  		to {background-color		: pink;}
 }
 /* Standard syntax */
 @keyframes example {
-  from {background-color: red;}
-  to {background-color: pink;}
+  		from {background-color: red;}
+  		to {background-color: pink;}
 }
 
 .initiale {
-
-	color : blue;
-	background : orange ;
+		color 				: blue;
+		background 			: orange ;
 }
 
 
 input {
-	font-size : 200%;
+		font-size 			: 200%;
 }
 
-table, td {
-	border : solid 1px black;
-	background : lightblue;
-	color : rgb(0,55,0);
-	width : 200px;
-	padding : 5px;
-	height : 20px;
-	font-size : 100 %;
+td {
+	border 				: solid 1px black		;
+	border-radius 			: 5px				; /* coins légèrement arrondis 			*/ 
+	background 			: rgba(255,200,255,0.8) 	; /* couleur complémentaire de celle du texte 	*/
+	color 				: rgb(0,55,0)			;
+	width 				: 20%				;
+	padding 			: 5px				; /* marge intérieure				*/
+	height 				: 20px				;
+	font-size 			: 100 %				;
 }
-
+table {
+	border 				: groove 10px brown		;
+	border-radius 			: 10px				; /* coins légèrement arrondis 			*/ 
+	background 			: rgba(255,200,255,0.8) 	; /* couleur complémentaire de celle du texte 	*/
+	color 				: rgb(0,55,0)			;
+	width 				: 90%				;
+	margin-left			: auto				; /* participe au centrage 			*/
+	margin-right			: auto				;
+	padding 			: 5px				; /* marge intérieure				*/
+	height 				: 20px				;
+	font-size 			: 100 %				;
+}
+img {
+	border-radius			: 50%				; /* cadre rond 				*/
+}
 svg{}
 div{
-	border : solid 2px red;
+	border 				: solid 2px red;
 }
 h1{}
 h2{}
 
 td.correction {
 
-	width : 400px;
-	border : solid 2px black;
+	width 				: 400px;
+	border 				: solid 2px black;
 }
 
 
 
 .tbSimple
 {
-	border: 2px groove (internal value);
-	border-collapse: collapse;
+	border				: 2px groove (internal value);
+	border-collapse			: collapse;
 }
 
 fieldset {
-  display: block;
-  margin-left: 2px;
-  margin-right: 2px;
-  padding-top: 0.35em;
-  padding-bottom: 0.625em;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  border: 2px groove (internal value);
-  border-collapse: collapse;
+  	display				: block;
+  	margin-left			: 2px;
+  	margin-right			: 2px;
+  	padding-top			: 0.35em;
+  	padding-bottom			: 0.625em;
+  	padding-left			: 0.75em;
+  	padding-right			: 0.75em;
+  	border				: 2px groove (internal value);
+  	border-collapse			: collapse;
 }
 ul {
 
-	list-style-type:arrow;
+	list-style-type			:arrow;
 }
 
 #reglages {
-	resize: both;
-	overflow: auto;
-	width : 600px;
-	padding : 10px;
-	height : 400px;
+	resize				: both;
+	overflow			: auto;
+	width 				: 600px;
+	padding 			: 10px;
+	height 				: 400px;
 }
