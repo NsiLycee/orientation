@@ -5,7 +5,7 @@
     const 	TERMINALE = 0,
         PREMIERE  = 1,
         SECONDE   = 2;
-    let 	participants = [ ["Jarod","Robin","Eric","Benjamin","Léali","Alexandre"]	        ,
+    let 	participants = [ ["Jarod","Léali","Eric","Benjamin","Robin","Alexandre"]	        ,
                      ["Juliette","Simon","Lilo","Charlotte","Gaël","Tom"]		                ,
                      ["Carla","Sarah","Juliette","Adriain","Adam","Alexia"] ]	                ,
                         avatars = ["clara.png", "clara01.png", "clara02.png", "claro01.png"     ,
