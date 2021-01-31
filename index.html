@@ -104,148 +104,11 @@
 	<section>
 	<article>
 		<details><summary>Les auteurs de ce site</summary>
-		<table><caption>Participants</caption>
-			<tr><th>Nom</th><th>Avatar</th><th>statut</th></tr>
-			<tr><td>Joël Dendaletche</td><td><img src="./ressources/images/avatars/jodenda.png" alt="" /></td><td>enseignant de NSI</td></tr>
-			<tr><td>Mathieu Palosse</td><td><img src="" alt="Mathieu Palosse" /></td><td>enseignant de NSI</td></tr>
-			<tr><td></td><td></td><td></td></tr>
-			<tr><td></td><td></td><td></td></tr>
-			<tr><td></td><td></td><td></td></tr>
-		
-		
-		</table>
+			<table id="participants"></table>
 		</details>
+		<p id="debug" style="font-size : 300%; color:black;background:white;"></p>
 		<details><summary>Les thématiques abordées</summary>
-		<table id="thematiques"><caption>Participants</caption>
-			<script>
-			/*   Construction du tableau de présentation des thèmes
-			const 	TERMINALE = 0,
-				PREMIERE  = 1,
-				SECONDE   = 2;
-			let 	participants = [ ['Jarod,'Robin','Eric','Benjamin','Léali','Alexandre']	,
-					         ['Juliette,'Simon','Lilo','Charlotte','Gaël','Tom']		,
-					         ['Carla,'Sarah','Juliette','Adriain','Adam','Alexia'] ]	,
-				i, j, N = participants[TERMINALE].length, M = participants.length		, 
-				contenuTableau = "<caption>Participants</caption><tr><th>groupe</th><th>"+
-						"Avatars</th><th>théme de travail</th></tr>"			,
-				pathAvatar = "./ressources/images/avatars/";
-				
-			for (i=0; i < N; i++) {
-				contenuTableau += "<tr>";
-				contenuTableau += "<td>"+participants[TERMINALE][i]+" "+participants[PREMIERE][i]+
-				" "+participants[SECONDE][i]</td>";
-				for (j=0; j < M; j++) {
-					contenuTableau +='<td><img class="avatar" src="'+pathAvatar+'clara.png"'+ 
-					 'alt="Avatar provisoire de Jarod" title="Jarod en terminale" />
-				contenuTableau += "</tr>";
-			}
-			*/
-			
-			</script>
-			<tr><th>groupe</th><th>Avatars</th><th>théme de travail</th></tr>
-			<tr>
-				<td>Jarod Juliette Carla</td>
-				<td>
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Jarod" title="Jarod en terminale" />
-				
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de Juliette" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro02.png" 
-					 alt="Avatar provisoire de Carla" />
-				</td>
-				<td>	</td>
-			</tr>
-			<tr>
-				<td>Robin Simon Sarah</td>
-				<td>
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Robin"  title="Robin en terminale"/>
-				
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Simon" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de Sarah" />
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Éric Lilo Juliette</td>
-				<td>
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de &Eacute;ric" title="Éric en terminale"/>
-				
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Lilo" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de Juliette" />
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Benjamin Charlotte Adriain</td>
-				<td>
-					<img class="avatar" 
-					 src="./ressources/images/avatars/benji01.png" 
-					 alt="Avatar provisoire de Benjamin" title="Benjamin en terminale" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Charlotte" title="Charlotte en première" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Adriain" />
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Léali Gaël Adam</td>
-				<td>
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Léali" title="Léali en terminale" />
-				
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de Gaël" title="Gaël en première" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro02.png" 
-					 alt="Avatar provisoire de Adam" />
-				</td>
-				<td></td>
-			</tr>
-			<tr>
-				<td>Alexandre Tom Alexia</td>
-				<td>
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara02.png" 
-					 alt="Avatar provisoire de Alexandre" title="Alexandre en terminale"/>
-				
-					<img class="avatar" 
-					 src="./ressources/images/avatars/clara.png" 
-					 alt="Avatar provisoire de Tom" title="Tom en première" />
-					
-					<img class="avatar" 
-					 src="./ressources/images/avatars/claro01.png" 
-					 alt="Avatar provisoire de Alexia" />
-				</td>
-				<td></td>
-			</tr>
-		</table>
+			<table id="thematiques"></table>
 		</details>
 	</article>
 	<!----------------------------------------------------------------->
@@ -276,5 +139,6 @@
 	<!----------------------------------------------------------------->
 	<!----------------------------------------------------------------->
 	<script src="./ressources/script/tmp.js"></script>
+	<script src="./ressources/script/constructionTableau.js">//////////////////////////</script>
 </body>
 </html>
