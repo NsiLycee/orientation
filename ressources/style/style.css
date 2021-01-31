@@ -77,7 +77,7 @@ table {
 }
 img.avatar {
 	border-radius			: 50%				; /* cadre rond 				*/
-	width				: 28%				; /* il y a trois avatars à placer dans un td   */
+	width				: 7%				; /* il y a trois avatars à placer dans un td   */
 	margin				: 3%				; /* 3 28 3 3 28 3 3 28 3 = 100 % 		*/
 	border				: 0px				;
 }
