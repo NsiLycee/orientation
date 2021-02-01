@@ -41,9 +41,9 @@ function construireListeSommaire () {
 	
 	listeSommaire.innerHTML += "</ul>";
 	}
-construireListeSommaire ();
+construireListeSommaire2 ();
 /* autre méthode de constuction utilisant les propriétés du DOM : document object model | // commentaires                         
-   _____________________________________________________________________________________| // ______________________________________
+   _____________________________________________________________________________________| // ______________________________________*/
 function construireListeSommaire2 () {
 	// déclaration des variables locales (let vs. var) et initialisation
 	let 	nItemms = tabItems.length						, 
@@ -53,7 +53,7 @@ function construireListeSommaire2 () {
 	    	i									, // index de boucle for
 		menu = document.createElement("ul")					; // objet menu : balise <ul> = liste à puces
 	
-	for (var i=0; i < nItems; i++) {
+	for (i=0; i < nItems; i++) {
 		item 		= document.createElement("li")				;			
 		lien 		= document.createElement("a")				;
 		lien.href 	= baseURL + URLs[i]					;
@@ -76,5 +76,5 @@ function construireListeSommaire2 () {
 	menu.appendChild(item)								;
 	listeSommaire.appendChild(menu)							;
 }
-*/
+
 
