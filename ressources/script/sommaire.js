@@ -41,8 +41,9 @@ function construireListeSommaire () {
 	
 	listeSommaire.innerHTML += "</ul>";
 	}
+construireListeSommaire ();
 /* autre méthode de constuction utilisant les propriétés du DOM : document object model | // commentaires                         
-   _____________________________________________________________________________________| // ______________________________________*/
+   _____________________________________________________________________________________| // ______________________________________
 function construireListeSommaire2 () {
 	// déclaration des variables locales (let vs. var) et initialisation
 	let 	nItemms = tabItems.length						, 
@@ -75,4 +76,5 @@ function construireListeSommaire2 () {
 	menu.appendChild(item)								;
 	listeSommaire.appendChild(menu)							;
 }
+*/
 
