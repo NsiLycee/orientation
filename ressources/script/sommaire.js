@@ -30,7 +30,7 @@ function construireListeSommaire () {
 	listeSommaire.innerHTML = "<h2>Sommaire :</h2><ul> <li><a href='index.html' >Accueil du site</a></li>";
 	
 	for (var i=0; i < nItems; i++) {
-		listeSommaire.innerHTML += "<li><a href='"+baseURL+"_"+i+ ".html' target='_blank' >" +tabItems[i]+"</a></li>";
+		listeSommaire.innerHTML += "<li><a href='" + base + URLs[i] + "' target='_blank' >" + tabItems[i] + "</a></li>";
 		}
 	listeSommaire.innerHTML += 	"<li><a href='https://www.iut-rodez.fr/fr/les-formations/but-informatique/but-informatique-programme'"+
 					" target='_blank' >" +"programme du BUT d'informatique</a></li>";
@@ -38,13 +38,14 @@ function construireListeSommaire () {
 	listeSommaire.innerHTML += "</ul>";
 	}
 /* autre méthode de constuction 
+function construireListeSommaire2 () {
 	let i = tabItems.length, item, lien;
 	var listeSommaire = document.getElementById("listeSommaire");
 	let menu = document.createElement("ul");
 	for (var i=0; i < nItems; i++) {
 		item 		= document.createElement("li")	;
 		lien 		= document.createElement("a")	;
-		lien.href 	= baseURL+"_"+i+ ".html"	;
+		lien.href 	= base + URLs[i]		;
 		lien.innerHTML	= tabItems[i]			;
 		lien.alt 	= "lien vers " + tabItems[i]	;	
 		lien.title 	= "lien vers " + tabItems[i]	;
@@ -61,4 +62,5 @@ function construireListeSommaire () {
 	item.appendChild(lien);
 	menu.appendChild(item);
 	listeSommaire.appendChild(menu);
+}
 */
