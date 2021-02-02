@@ -5,7 +5,7 @@
     const 	TERMINALE = 0,
         PREMIERE  = 1,
         SECONDE   = 2;
-    let 	participants = [ ["Jarod","Léali","Eric","Benjamin","Robin","Alexandre"]	        ,
+    let 	participants = [ ["Jarod","Robin","Eric","Benjamin","Léali","Alexandre"]	        ,
                      ["Juliette","Simon","Lilo","Charlotte","Gaël","Tom"]		                ,
                      ["Carla","Sarah","Juliette","Adriain","Adam","Alexia"] ]	                ,
                         avatars = ["clara.png", "clara01.png", "clara02.png", "claro01.png"     ,
@@ -29,7 +29,6 @@
         for (niveau=TERMINALE; niveau < M; niveau++) {
             // tirage aléatoire de l'image servant d'avatar sauf pour ...
             if (participants[niveau][i] == 'Benjamin') { image = "benji01.png";}
-	    else {if (participants[i][j] == 'Léali') {image = "leali.png";}}
             else { image = avatars[Math.floor(Math.random()*nIm)]; }
             contenuTableau +="<img class='avatar' src='"+pathAvatar+image+
                             "' alt='Avatar provisoire de "+participants[niveau][i];
@@ -102,8 +101,7 @@
 
                 // tirage aléatoire de l'image servant d'avatar sauf pour ...
                 if (participants[i][j] == 'Benjamin') { image = "benji01.png";}
-                else {if (participants[i][j] == 'Léali') {image = "leali.png";}}
-		else { image = avatars[Math.floor(Math.random()*nIm)]; }
+                else { image = avatars[Math.floor(Math.random()*nIm)]; }
 
                 img = document.createElement('img');
                 img.alt   = "Avatar provisoire de " + participants[i][j];
@@ -126,4 +124,6 @@
 
     construireTableau1(); // méthode utilisant innerHTML
     construireTableau2(); // méthode utilisant createElement puis appendChild
+
+
 
