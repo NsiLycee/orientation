@@ -29,7 +29,7 @@
         for (niveau=TERMINALE; niveau < M; niveau++) {
             // tirage aléatoire de l'image servant d'avatar sauf pour ...
             if (participants[niveau][i] == 'Benjamin') { image = "benji01.png";}
-	    else if (participants[i][j] == 'Léali') {image = "leali.png";}
+	    else {if (participants[i][j] == 'Léali') {image = "leali.png";}}
             else { image = avatars[Math.floor(Math.random()*nIm)]; }
             contenuTableau +="<img class='avatar' src='"+pathAvatar+image+
                             "' alt='Avatar provisoire de "+participants[niveau][i];
@@ -102,7 +102,7 @@
 
                 // tirage aléatoire de l'image servant d'avatar sauf pour ...
                 if (participants[i][j] == 'Benjamin') { image = "benji01.png";}
-                else if (participants[i][j] == 'Léali') {image = "leali.png";}
+                else {if (participants[i][j] == 'Léali') {image = "leali.png";}}
 		else { image = avatars[Math.floor(Math.random()*nIm)]; }
 
                 img = document.createElement('img');
