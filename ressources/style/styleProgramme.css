@@ -26,14 +26,14 @@ ul li {
 ul li:hover { /* actif lorsque l'item est survolé par le pointeur de la souris */
 		background: rgb(0,0,0) ;
 		color : rgb(255,255,255);
-		font-size:150%;
+		font-size:100%;
 		list-style-type: circle;
 	}
 
 a:hover { /* quand le curseur de souris passe au dessus du lien */
 			color: orange; /* couleur du texte */ 
 			background: blue;
-			font-size:150%;
+			font-size:100%;
 			}
 		
 * { /* s'applique à tous les éléments = balises */ 
