@@ -70,8 +70,11 @@
 
 <!--------------------------------------------------------------------->
 <!----------- Définition du style local de la page : déconseillé ! ---->
-	<style>
-	         
+	<style>	section {height : 70%; }
+		article { display : flex; width : 100%; }
+		article div { 	flex : 1 ;
+				height : 100%; 
+				broder : 5px solid groove; }
 	</style>
 </head>
 <!--------------------------------------------------------------------->
@@ -91,11 +94,17 @@
 	<ul class="menu">
 		<li><a href="./index.html">retour à la page d'accueil</a>
 		</li>
-		<li>site du groupe <abbr title="Terminale Première Seconde">TPS
+		<li>menu 1</li>
+		<li>menu 2</li>
+		<li>menu 3</li>
+		<li></li>
+		<li></li>
+			
+			<!--site du groupe <abbr title="Terminale Première Seconde">TPS
 		</abbr> : <a href="./pages/projetDe.html" 
 		title ="site du groupe TPS : Jarod Juliette Carla">
-			Jarod Juliette Carla</a>
-		</li>
+			Jarod Juliette Carla</a> -->
+		
 	</ul>
 	</nav>
 	</header>
@@ -103,13 +112,14 @@
 	<!----------------------------------------------------------------->
 	<section>
 	<article>
-		<details><summary>Les auteurs de ce site</summary>
-			<table id="participants"></table>
-		</details>
-		<p id="debug" style="font-size : 300%; color:black;background:white;"></p>
-		<details><summary>Les thématiques abordées</summary>
-			<table id="thematiques"></table>
-		</details>
+		<div id="depuisLaSeconde">
+			<p>Tu es en seconde ou au collège ?
+			<br/>qu'est ce que la sépcialité <abbr 
+		title="Numérique et sciences informatiques">NSI</abbr> ?
+			</p>
+		</div>	
+		<div id="depuisLaPremièreEtTerminale">
+		</div>
 	</article>
 	<!----------------------------------------------------------------->
 	<!----------------------------------------------------------------->
@@ -123,6 +133,14 @@
 	<!----------------------------------------------------------------->
 	<!----------------------------------------------------------------->
 	<footer>
+		<details><summary>Les auteurs de ce site</summary>
+			<table id="participants"></table>
+		</details>
+		<p id="debug" style="font-size : 300%; color:black;background:white;"></p>
+		<details><summary>Les thématiques abordées</summary>
+			<table id="thematiques"></table>
+		</details>
+	<!--
 		<h2>Liens utiles :</h2>
 		<ul>
 			<li>tutoriel <a href="https://www.w3schools.com" 
@@ -135,6 +153,7 @@
 				csszengarden.com</a> le site qui montre une (presque) 
 				infinité de styles en css/</li>
 		</ul>
+	-->
 	</footer>
 	<!----------------------------------------------------------------->
 	<!----------------------------------------------------------------->
