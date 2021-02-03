@@ -14,6 +14,13 @@
             
             Enseignants : Joël Dendaletche et Mathieu Palosse
 
+Thème du trio Jarod Juliette Carla 			:  feuille de style CSS globale, description NSI
+Thème du trio Léali Simon Sarah 			: 
+Thème du trio Eric Lilo Juliette 			: 
+Thème du trio SILVA Benjamin Charlotte Adriain 		: 
+Thème du trio Robin Gaël Adam 				: 
+Thème du trio Alexandre Tom Alexia 			: 
+
 
 --->
 <!-------------------- encodage UTF-8 --------------------------------->
@@ -76,6 +83,7 @@
 				height : 100%; 
 				broder : 5px solid groove; }
 	</style>
+	<script src="./ressources/script/w3.js">/* permet les inclusions de code = include */</script>
 </head>
 <!--------------------------------------------------------------------->
 <!-- la balise body délimite les instructions qui permettront d'afficher 
@@ -100,7 +108,8 @@
 		<li></li>
 		<li></li>
 			
-			<!--site du groupe <abbr title="Terminale Première Seconde">TPS
+			<!--exemple d'item de menu désactivé : site du groupe 
+		<abbr title="Terminale Première Seconde">TPS
 		</abbr> : <a href="./pages/projetDe.html" 
 		title ="site du groupe TPS : Jarod Juliette Carla">
 			Jarod Juliette Carla</a> -->
@@ -112,13 +121,16 @@
 	<!----------------------------------------------------------------->
 	<section>
 	<article>
-		<div id="depuisLaSeconde">
-			<p>Tu es en seconde ou au collège ?
-			<br/>qu'est ce que la sépcialité <abbr 
+		<div id="depuisLaSeconde" 
+		     w3-include-HTML="./pages/secondes.html">
+		<!--	<p>Tu es en seconde ou au collège ?
+			<br/>qu'est ce que la sépcialité <abbr  
 		title="Numérique et sciences informatiques">NSI</abbr> ?
-			</p>
+			
+			</p> -->
 		</div>	
-		<div id="depuisLaPremièreEtTerminale">
+		<div id="depuisLaPremièreEtTerminale" 
+		     w3-include-HTML="./pages/premTerm.html">
 		</div>
 	</article>
 	<!----------------------------------------------------------------->
@@ -156,8 +168,12 @@
 	-->
 	</footer>
 	<!----------------------------------------------------------------->
+	<!--			inclusion des scripts JS	    	 -->
 	<!----------------------------------------------------------------->
 	<script src="./ressources/script/tmp.js"></script>
-	<script src="./ressources/script/constructionTableau.js">//////////////////////////</script>
+	<script src="./ressources/script/constructionTableau.js">
+		// constuit les tableaux des auteurs et projets   </script>
+	<script>    w3.includeHTML(); // librairie js de w3school pour gérer
+	// les inclusions de code (entre autres) </script>
 </body>
 </html>
