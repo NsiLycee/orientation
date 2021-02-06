@@ -1,0 +1,94 @@
+<!DOCTYPE html> <!-- source : https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_down -->
+<html>
+<head> <!-- title défini dans le script en bas de page -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+var down = false;
+$(document).ready(function(){
+  $("#flip").click(function(){
+   if (down) {$("#panel").slideUp("slow");} else {
+    $("#panel").slideDown("slow"); }
+    down = !down;
+  });
+});
+</script>
+<style>
+:root {
+  	--niv-color: 40;
+ }
+ body {
+    --r : var(--niv-color); --rc : calc(255-var(--r));
+    --g : var(--niv-color); --gc : calc(255-var(--g));
+    --b : var(--niv-color); --bc : calc(255-var(--b));
+    background : rgb(var(--r),var(--g),var(--b));
+    color      : rgb(var(--rc),var(--gc),var(--bc));
+ }
+#panel, #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(127,120,120);
+  border: solid 1px #c3c3c3;
+}
+#flip {
+  border-radius : 15px 15px 0px 0px; /* first value applies to top-left corner, second value applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left corner */
+}
+#panel {
+  border-radius : 0 0 15px 15px; /* first value applies to top-left corner, second value applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left corner */
+}
+/* https://www.w3schools.com/cssref/css_selectors.asp */
+div[id|="div"] { color:red; padding : 10px; } /* tous les div dont l'id contient item */
+div:hover { background : rgb(var(--r),120,120);}
+#panel {
+  padding: 50px;
+  display: none;
+}
+#contraste2 {
+	border : 3px solid white;
+	border-radius : 50%;
+    width		  : 20px;
+}
+</style>
+</head>
+<body>
+ 
+<div id="flip">Click to slide down panel</div>
+<div id="panel">
+     <!-- construction de la liste des items 
+       <div id="item1"> item1 </div>           -->
+</div>
+<button id="contraste">Ambiance jour</button>
+<input type="range" min="0" max="1" id="contraste2">
+</body>
+<script>
+const JOUR = 0, NUIT = 1;
+var attribs = ["color", "background"], valStyles = [["white","black"],["black","white"]], i, N = valStyles.length, contraste = JOUR,
+contr  = document.getElementById("contraste"), 
+contr2 = document.getElementById("contraste2"), legendeBouton = ["jour", "nuit"];
+
+function dessineListe () {
+	let liste = document.getElementById("panel"), i, N = 4, div;
+    for (i=0;i<N;i++) { 
+    	div = document.createElement("div"); 
+        div.id = "div" + i;
+        div.innerHTML = "item n° " + i + " d'id = " + div.id;
+        div.style = "padding:20px;border:2px solid black";
+        liste.appendChild(div);
+    }
+}
+
+function changeContraste () {
+	for (i=0;i<N;i++) document.body.style[attribs[i]] = valStyles[contraste][i]; 
+    contr.innerHTML = "ambiance " + legendeBouton [contraste];
+	contraste = 1 - contraste ; 
+    }
+
+contr.addEventListener("click", changeContraste);
+contr2.addEventListener("click", changeContraste);
+
+// déclenchés au chargement de la page :
+document.title = "exemple de gestion jour/nuit des couleurs ...";
+dessineListe    ();
+changeContraste ();
+
+</script>
+</html>
