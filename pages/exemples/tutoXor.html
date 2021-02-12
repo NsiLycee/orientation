@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Propriétés de l'opérateur bit à bit Xor</title>
+<!-- permet l'adaptation à tout type d'écrans : responsive 
+     https://www.w3schools.com/css/css_rwd_viewport.asp      -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+:root {
+	--max : 255 ;
+  	--nivGris : 200;
+    --nivComp : calc(var(--max) - var(--nivGris)); /* attention : mettre un espace entre les opérandes et les opérateurs */
+	--couleur : rgb(var(--nivGris),var(--nivGris),var(--nivGris));
+    --fond : rgb(var(--nivComp),var(--nivComp),var(--nivComp));
+   /**/
+}
+body, .cameleon {
+	color : var(--couleur);
+    background : var(--fond);
+}
+ /* unvisited link */
+a:link { /* bleu clair */
+  color: rgb(var(--nivComp),var(--nivComp),var(--nivGris));
+}
+
+/* visited link */
+a:visited { /* vert clair */
+  color : rgb(var(--nivComp),var(--nivGris),var(--nivComp));
+}
+
+/* mouse over link */
+a:hover { /* rouge clair */
+  color: rgb(var(var(--nivGris),--nivComp),var(--nivComp));
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+} 
+div {
+	padding : 10px;
+	border : 1px solid var(--couleur);
+	width : 90%;
+    height : 50px;
+}
+table, td, th { 
+	border : solid 1px var(--couleur); 
+	text-align : center ;
+    padding : 5px;
+}
+ /* The animation code */
+@keyframes bordure {
+  0% {border: solid 2px red; background : yellow;}
+  50% {border: solid 5px orange; background : var(--fond);}
+  100% 0% {border: solid 2px red; background : yellow;}
+}
+input:invalid {
+  /*border: 2px solid red;*/
+  animation-name: bordure;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.cameleon { border : 0; /*width : 3em;*/ }
+.tableauRes { display : none; }
+</style>
+</head>
+<body>
+
+<h2>JavaScript Bitwise XOR : opération bit à bit Xor</h2>
+<p>Xor est l'opération logique équivallente à la fonction logique : (non A et B) ou (A et non B) </p>
+<details><summary>pour en savoir plus sur Xor</summary>
+lien vers l'<a href="https://fr.wikipedia.org/wiki/Fonction_OU_exclusif" target="_blank" title="lien vers l'article wikipedia sur Xor">article wikipedia</a> sur Xor <br/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Venn0110.svg/330px-Venn0110.svg.png" alt="représentation ensembliste de Xor"/></details>
+<!-- réserve <table> -->
+<table>
+<tr><th>A</th><th>non A</th><th>B</th><th>non B</th><th>non A et B</th><th>A et non B</th><th>A Xor B = <br/>(non A et B) ou (A et non B)</th><th>(A Xor B) Xor B<br/> = A </th></tr>
+<tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr>
+</table> 
+<p id="debug"></p>
+<fieldset><legend>exemple (modifiable)</legend>
+	<table>
+    	<tr><td><label for="nombre1">premier nombre</label></td><td><input type="number" id="nombre1" size = "50" placeholder="saisir ici un premier nombre entier" oninput="exemple();" class="cameleon" value="32"/></td></tr>
+        <tr><td><label for="nombre2">deuxième nombre</label></td><td><input type="number" id="nombre2" size = "50" placeholder="saisir ici un deuxième nombre entier" oninput="exemple();" class="cameleon" value="16"/></td></tr>
+    </table>
+</fieldset>
+<br/>
+<section id="demo">Affichage ici</section>
+
+<script>
+var debug = document.getElementById("debug");
+
+function octet (nbBin, format = 16) {
+	// complète le nombre avec des zéros à gauche
+    // pour qu'il s'écrive sur pa rexemple deux octets : 16 bits
+    
+	let n = nbBin.length, i;
+    let N = (format >= n ? format - n : 0) ;
+    
+    for (i=0;i<N;i++){ nbBin = "0" + nbBin; }
+	return nbBin;
+}
+function trait (n) {
+	// crèe un trait de longueur n composé du caractère _ (du 8)
+	let i, ligne = "";
+    for (i=0;i<n;i++){ ligne += "_"; } 
+    return ligne; 
+}
+function bin2dec (strBin) {
+	let i, n = strBin.length, somme = 0;
+    
+    for (i=0;i<n;i++){ somme += parseInt(strBin.charAt(n-i-1))*Math.pow(2,i); }
+    return somme;
+	}
+function exemple () { // n1 et n2 représentent deux entiers
+	// affichage de l'opération xor entre les deux nombres, d'abord avec des nombres
+    // décimaux, puis avec les mêmes nombres en binaire
+    let n1 = document.getElementById("nombre1").value, 
+        n2 = document.getElementById("nombre2").value;
+    let a = (isNaN(n1) ? 0 : parseInt(n1));
+	let b = (isNaN(n2) ? 0 : parseInt(n2));
+    let nA = a.toString(2).length, 
+        nB = b.toString(2).length; 
+    let n = (nA >= nB ? nA : nB ), 
+        nD = (a >= b ? Math.floor(Math.log(a)+1) : Math.floor(Math.log(b)+1));
+    //debug.innerHTML = "a = "+a+" l = "+nA+" b = "+b +" n = "+ n + "(a^b).toString(2)" + (a^b).toString(2);
+	document.getElementById("demo").innerHTML = "<section>"+a + "<br/>xor<br/>"+ b + "<br/>"+trait(nD)+"<br/>"+ 	(a^b) + "</section>";
+	document.getElementById("demo").innerHTML += "<section><br/>"+ octet(parseInt(a).toString(2),n) + 	"<br/>xor<br/>"+  octet(parseInt(b).toString(2),n) + "<br/>"+trait(n)+"<br/>"+ octet((a^b).toString(2),n) + "</section>";
+}
+
+exemple ();
+</script>
+
+</body>
+</html> 
+
