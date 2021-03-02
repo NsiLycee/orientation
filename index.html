@@ -34,4 +34,19 @@
             <img id = "t2" src = "./img/t2.jpg"/>
         </div>
     </body>
+	    <script>
+		    // raccourcis d'écriture
+		    function $(id)   { return document.getElementById(id); }
+		    function $body() { return document.body;               }
+		    
+		    $body().addEventListener("load",changeFond);	    
+		    
+		    function changeFond () {
+		    	let r, g, b;
+			r = Math.floor(Math.random()*255);
+			g = Math.floor(Math.random()*255);
+			b = Math.floor(Math.random()*255);
+			$body().style.background = "rgb("+r+","+g+","+b+")";
+		    }
+	    </script>
 </html>
