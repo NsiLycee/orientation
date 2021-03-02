@@ -23,8 +23,8 @@
                         "<th>Avatars</th><th>théme de travail</th></tr>";
     for (i=0; i < N; i++) {
         contenuTableau += "<tr>";
-        contenuTableau += "<td>"+participants[TERMINALE][i]+" "+participants[PREMIERE][i]+
-        " "+participants[SECONDE][i]+"</td><td>";
+        contenuTableau += "<td>"+participants[TERMINALE][i]+"(terminale) "+participants[PREMIERE][i]+
+        "(première) "+participants[SECONDE][i]+"(seconde)</td><td>";
 
         for (niveau=TERMINALE; niveau < M; niveau++) {
             // tirage aléatoire de l'image servant d'avatar sauf pour ...
@@ -104,8 +104,8 @@
                 else { image = avatars[Math.floor(Math.random()*nIm)]; }
 
                 img = document.createElement('img');
-                img.alt   = "Avatar provisoire de " + participants[i][j];
-                img.title = "Avatar provisoire de " + participants[i][j];
+                img.alt   = "Avatar provisoire de " + participants[i][j] + " en " + nomNiveaux[i];
+                img.title = "Avatar provisoire de " + participants[i][j] + " en " + nomNiveaux[i];
                 img.src = pathAvatar+image;
 
                 cellule = document.createElement('td');
