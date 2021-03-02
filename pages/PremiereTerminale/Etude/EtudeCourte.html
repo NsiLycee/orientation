@@ -1,1 +1,52 @@
+<!DOCTYPE html>
 
+<html>
+    <head>
+        <!-- Méta données -->
+
+        <meta http-equiv = "content-type" content = "text/html; charset=utf-8"/>    
+        <meta name="author" content="Joël Dendaletche  Mathieu Palosse"/>
+        <meta name="created" content="2021-01-28"/>
+        <meta name="changed" content="2021-01-28"/>
+        <meta name="Company" content="Lycée La Découverte Decazeville 12300 Aveyron Occitanie France"/>
+        <meta name="description" content="Orientation post NSI">
+        <meta name="keywords" content="Informatique">
+
+        <!-- la méta-donnée suivante rafraichit l'écran toute les minutes    -->
+	    <meta http-equiv="refresh" content="10">
+        
+        <!-- Liens externes -->
+        <link rel = "stylesheet" type = "text/css" href = "../../../ressources/style/homePage.css"
+    </head>
+
+    <body>
+        <header>
+            Des poursuites d'études
+        </header>
+
+        <div class = "t1">
+            <a href = "EtudeCourte.html" target="_blank"/>
+            <img id = "t1" src = "../../../ressources/images/photo/EtudeCourte.jpg" />
+        </div>
+
+        <div class = "t2 ">
+            <a href = "EtudeLongue.html" target="_blank"/>
+            <img id = "t2" src = "../../../ressources/images/photo/EtudeLongue.jpg"/>
+        </div>
+    </body>
+	    <script>
+		    // raccourcis d'écriture
+		    function $(id)   { return document.getElementById(id); }
+		    function $body() { return document.body;               }
+		    
+		    $body().addEventListener("load",changeFond);	    
+		    
+		    function changeFond () {
+		    	let r, g, b;
+			r = Math.floor(Math.random()*255);
+			g = Math.floor(Math.random()*255);
+			b = Math.floor(Math.random()*255);
+			$body().style.background = "rgb("+r+","+g+","+b+")";
+		    }
+	    </script>
+</html>
