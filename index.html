@@ -22,6 +22,15 @@
     <body>
         <header>
             La NSI au lycée
+
+		<div class="dropdown">
+		  <button onclick="myFunction()" class="dropbtn"><div id="icon"></div><div id="icon"></div><div id="icon"></div></button>
+		  <div id="myDropdown" class="dropdown-content">
+		    <a href="./pages/Seconde/seconde.html">Seconde</a>
+		    <a href="./pages/PremiereTerminale/premiereTerminale.html">PremiereTerminale</a>
+		  </div>
+		</div>	
+		
         </header>
 
         <div class = "t1">
@@ -48,5 +57,22 @@
 			b = Math.floor(Math.random()*255);
 			$body().style.background = "rgb("+r+","+g+","+b+")";
 		    }
+			function myFunction() {
+			  document.getElementById("myDropdown").classList.toggle("show");
+			}
+
+			// Close the dropdown if the user clicks outside of it
+			window.onclick = function(event) {
+			  if (!event.target.matches('.dropbtn')) {
+			    var dropdowns = document.getElementsByClassName("dropdown-content");
+			    var i;
+			    for (i = 0; i < dropdowns.length; i++) {
+			      var openDropdown = dropdowns[i];
+			      if (openDropdown.classList.contains('show')) {
+				openDropdown.classList.remove('show');
+			      }
+			    }
+			  }
+			}		    
 	    </script>
 </html>
