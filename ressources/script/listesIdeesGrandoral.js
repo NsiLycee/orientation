@@ -8,9 +8,11 @@ const themes = [
   "L’histoire de l’informatique",
   "Langages et programmation",
   "Données structurées et structures de données",
+  "Algorithmique",
   "Bases de données",
   "Architectures matérielles, systèmes d’exploitation et réseaux",
-  "Interfaces Hommes-Machines (IHM)"];
+  "Interfaces Hommes-Machines (IHM)", 
+  "Impact sociétal et éthique de l'informatique"];
 const questions = [
   [
     "Femmes et numérique : quelle histoire ? quel avenir ?",
@@ -51,4 +53,17 @@ const questions = [
     "La voiture autonome, quels enjeux ?"
   ],[
     "Comment protéger les données numériques sur les réseaux sociaux ?",
-    "","","",""]];
+    "Quelle est l'empreinte carbone du numérique en terme de consommation ?",
+"Pourquoi chiffrer ses communications ?",
+"Les réseaux sociaux sont-ils compatibles avec la politique ?",
+"Les réseaux sociaux sont-ils compatibles avec le journalisme ?",
+"Les réseaux sociaux permettent-ils de lutter contre les infox ?",
+"L'informatique-t-elle révolutionner le dessin animé ?",
+"L'informatique-t-elle révolutionner la composition musicale ?",
+"L'informatique-t-elle révolutionner l'art ?",
+"L'informatique-t-elle révolutionner le cinéma ?",
+"L'informatique-t-elle révolutionner la médecine ?",
+"L'informatique-t-elle révolutionner la physique ?",
+"L'informatique-t-elle révolutionner l'entreprise",
+"Le numérique : facteur de démocratisation ou de fractures sociales ?",
+"Informatique : quel impact sur le climat ?"]];
