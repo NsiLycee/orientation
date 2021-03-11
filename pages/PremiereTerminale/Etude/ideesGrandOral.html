@@ -2,24 +2,35 @@
 <body> <!-- tout est fait en JS ! --></body>
 <script src="https://nsilycee.github.io/orientation/ressources/script/listesIdeesGrandoral.js">
 </script><script>
+
 var sources = ["https://disciplines.ac-toulouse.fr/informatique/system/files/2021-01/Grand_oral_Igesr_Document_integral_0.pdf"];
 const racines = ["body","head"];
 for (let nom of racines) document[nom].id = nom;
 
-var titrePrincipal = $c("h1", "Quelques idées de questions en NSI pour le grand oral", "titrePrincipal", "body", {  }, {border : "solid 2px orange", background : "lightblue", textAlign : "center", padding : "10px" } );
+// réglages du style de body
+var styleBody = {color : "orange", background : "darkblue"};
+for (let parametre in styleBody) $("body").style[parametre] = styleBody[parametre];
 
+var titrePrincipal = $c("h1", "Quelques idées de questions en NSI pour le grand oral", "titrePrincipal", "body", {   }, {border : "solid 2px orange", background : "lightblue", textAlign : "center", padding : "10px" } );
+
+var nbIdees = 0;
 for (let indice in themes) {
 	let theme = themes[indice];
-	let h2 = $c("h2",theme,"h2"+indice);
-    let ul = $c("ul","","ul"+indice);
+	//let h2 = $c("h2",theme,"h2"+indice);
+    
+    $c("details","","details"+indice,"body", {},{ background : "darkblue"});
+    $c("summary",theme,"","details"+indice,{},{ fontSize : "200%"});
+    
+    let ul = $c("ul","","ul"+indice,"details"+indice);
     for (let question of questions[indice]) {
-    	$c("li",question,"li"+indice+question.slice(0,10),"ul"+indice);
+    	nbIdees++;
+    	$c("li",question,"li"+ nbIdees,"ul"+indice, {},{},{ mouseover : function () {$("li"+ nbIdees).style.background = "lightblue"} , mouseout : function () {$("li"+ nbIdees).style.background = "darkblue";} });  //indice+question.slice(0,10)
     }
 }
 
 function $(id) {return document.getElementById(id)}
 
-function $c(type,contenu ="",id,parentId = "body",attributs = { style : "color:black;background:white;" },styles = { color : "red" }) {
+function $c(type,contenu ="",id,parentId = "body",attributs = { style : "color:black;background:white;" },styles = { color : "red" }, events = { mouseover : function () { return none } }) {
 	let element = document.createElement(type);
     element.innerHTML = contenu || ""; // idem que contenu ? contenu :""
     if($(id)) { 
@@ -27,13 +38,15 @@ function $c(type,contenu ="",id,parentId = "body",attributs = { style : "color:b
         element.id = randomId;
     }
     else { element.id = id }
-    for (let attribut in attributs) {
-    	element[attribut] = attributs[attribut];
-    }
-    for (let parametres in styles) {
-    	element.style[parametres] = styles[parametres];
-    }
+    if (contenu != "" && element.title == "") element.title = contenu;
+    
+    for (let attribut in attributs) element[attribut] = attributs[attribut];
+    
+    for (let parametres in styles) element.style[parametres] = styles[parametres];
+    
     $(parentId).appendChild(element);
+    
+    for (let evt in events) element.addEventListener(evt, events[evt]);
 	return element;
 }
 </script>
