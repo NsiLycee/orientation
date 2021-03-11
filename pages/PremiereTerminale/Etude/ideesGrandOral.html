@@ -1,0 +1,40 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"</head>
+<body> <!-- tout est fait en JS ! --></body>
+<script src="https://nsilycee.github.io/orientation/ressources/script/listesIdeesGrandoral.js">
+</script><script>
+var sources = ["https://disciplines.ac-toulouse.fr/informatique/system/files/2021-01/Grand_oral_Igesr_Document_integral_0.pdf"];
+const racines = ["body","head"];
+for (let nom of racines) document[nom].id = nom;
+
+var titrePrincipal = $c("h1", "Quelques idées de questions en NSI pour le grand oral", "titrePrincipal", "body", {  }, {border : "solid 2px orange", background : "lightblue", textAlign : "center", padding : "10px" } );
+
+for (let indice in themes) {
+	let theme = themes[indice];
+	let h2 = $c("h2",theme,"h2"+indice);
+    let ul = $c("ul","","ul"+indice);
+    for (let question of questions[indice]) {
+    	$c("li",question,"li"+indice+question.slice(0,10),"ul"+indice);
+    }
+}
+
+function $(id) {return document.getElementById(id)}
+
+function $c(type,contenu ="",id,parentId = "body",attributs = { style : "color:black;background:white;" },styles = { color : "red" }) {
+	let element = document.createElement(type);
+    element.innerHTML = contenu || ""; // idem que contenu ? contenu :""
+    if($(id)) { 
+    	let randomId = id + Math.floor(Math.random()*1000+1);
+        element.id = randomId;
+    }
+    else { element.id = id }
+    for (let attribut in attributs) {
+    	element[attribut] = attributs[attribut];
+    }
+    for (let parametres in styles) {
+    	element.style[parametres] = styles[parametres];
+    }
+    $(parentId).appendChild(element);
+	return element;
+}
+</script>
+</html>
