@@ -4,8 +4,9 @@
 </script><script>
 
 var sources = ["https://disciplines.ac-toulouse.fr/informatique/system/files/2021-01/Grand_oral_Igesr_Document_integral_0.pdf"];
-const racines = ["body","head"];
+const racines = ["body","head","title"];
 for (let nom of racines) document[nom].id = nom;
+document["title"] = "idées pour le grand oral en NSI";
 
 // réglages du style de body
 var styleBody = {color : "orange", background : "darkblue"};
