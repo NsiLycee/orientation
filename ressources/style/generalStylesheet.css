@@ -1,0 +1,167 @@
+                                                    /*********************************/ 
+                                                    /*                               */
+                                                    /*       General StyleSheet      */
+                                                    /*                               */
+                                                    /*********************************/
+
+/* -- General Style -- */
+
+body 
+    {   
+        margin: 0 ;
+        background : #999999 ; 
+    }
+
+header
+    {   
+        font-family: Verdana, Sans-serif ;
+        line-height : 230% ;
+        text-align: center;
+        color: white;
+        font-size: 30px;
+        height :75px ;
+        background : #595959 ;
+    }
+
+/** -- Divs Container -- **/
+
+.container 
+{   
+    display: flex;
+    height: 560px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/** -- Margin : Div1 & Div2  -- **/
+
+.margin
+{
+    width:100px ;
+}
+
+/* -- Div n°1 Style -- */
+
+.div1 
+    {
+        position: relative;
+        margin : 10px ;
+        width : 40% ;
+    }
+
+.img1
+    {
+        display: block;
+        width:  100%;
+        height: auto;
+    }
+
+.i1 
+    {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color : white ;
+        overflow: hidden;
+        width: 0;
+        height: 100%;
+        transition: .5s ease;
+    }
+
+.div1:hover .i1 
+    {
+        width: 100%;
+    }
+
+.t1 
+    {
+        color: black;
+        font-family: Verdana, Sans-serif ;
+        font-size: 20px;
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+
+    .d1 
+    {
+        color : black ;
+        font-family: Verdana, Sans-serif ;
+        font-size : 20px ;
+        position : absolute ;
+        top : 50% ;
+        left : 50% ;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        white-space: nowrap;
+    }
+
+/** -- Div n°2 Style -- **/
+
+.div2 
+{
+    position: relative;
+    margin : 10px ;
+    width : 40% ;
+}
+
+.img2
+{
+    display: block;
+    width:  100%;
+    height: auto;
+}
+
+.i2 
+{
+    position: absolute;
+    bottom: 0;
+    left: 100%;
+    right: 0;
+    background-color : white ;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.div2:hover .i2 
+{
+    width: 100%;
+    left : 0 ; 
+}
+
+.t2 
+{
+    color: black;
+    font-family: Verdana, Sans-serif ;
+    font-size: 20px;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
+
+.d2 
+{
+    color : black ;
+    font-family: Verdana, Sans-serif ;
+    font-size : 20px ;
+    position : absolute ;
+    top : 50% ;
+    left : 50% ;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+}
